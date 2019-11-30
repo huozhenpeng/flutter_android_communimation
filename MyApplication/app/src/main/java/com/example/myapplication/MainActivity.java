@@ -30,16 +30,16 @@ public class MainActivity extends AppCompatActivity {
 
     private FrameLayout content;
     private TextView tv;
-    private TextView tv2;
-    private TextView tv3;
+    private TextView tv_content;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         content=findViewById(R.id.content);
+        tv_content=findViewById(R.id.tv_content);
         tv=findViewById(R.id.tv);
-        tv2=findViewById(R.id.tv2);
-        tv3=findViewById(R.id.tv3);
+
+        //window.defaultRouteName可以获取这个initialRoute的值来展示不同widget
         final FlutterView flutterView=Flutter.createView(this,getLifecycle(),"route1");
         content.post(new Runnable() {
             @Override
@@ -86,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void success(Object o) {
 
-                        Toast.makeText(MainActivity.this,o.toString(),Toast.LENGTH_LONG).show();
+                        //Toast.makeText(MainActivity.this,o.toString(),Toast.LENGTH_LONG).show();
+                        tv_content.setText("显示："+o.toString());
                     }
 
                     @Override
@@ -101,28 +102,6 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-
-        tv2.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this,SecondActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        tv3.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this,ThreeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
 
 
     }

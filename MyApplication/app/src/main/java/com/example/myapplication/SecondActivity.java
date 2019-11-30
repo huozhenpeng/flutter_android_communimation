@@ -27,7 +27,7 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_three);
         content=findViewById(R.id.content);
         tv=findViewById(R.id.tv);
         tv2=findViewById(R.id.tv2);

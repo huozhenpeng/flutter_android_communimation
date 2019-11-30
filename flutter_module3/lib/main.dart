@@ -3,6 +3,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'circle/AbilityWidget.dart';
+import 'circle/AbilityWidget2.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -41,6 +44,31 @@ class MyApp extends StatelessWidget {
     else if("route3"==window.defaultRouteName)
       {
         return HomePageBasicMessageChannel();
+      }
+    else if("show_canvas"==window.defaultRouteName)
+      {
+        var sca = Scaffold(
+            body: Center(child: AbilityWidget2(
+              ability: Ability(
+                  radius: 100,
+                  image: AssetImage("images/scenery.jpg"),
+                  data: {
+                    "攻击力": 70.0,
+                    "生命": 90.0,
+                    "闪避": 50.0,
+                    "暴击": 70.0,
+                    "破格": 80.0,
+                    "格挡": 100.0,
+                  },
+                  color: Colors.greenAccent,
+                  duration: 2000
+              ),
+            )),
+          );
+        return Container(
+          color: Colors.white,
+          child: sca,
+        );
       }
     else
       {
@@ -175,6 +203,8 @@ class _MyHomePageState extends State<HomePage>
       _batteryLevel = batteryLevel;
     });
   }
+
+
 
   Future<dynamic> platformCallHandler(MethodCall call) async {
     //call.method是获取方法名，call.arguments是获取方法参数

@@ -60,11 +60,12 @@ public class ThreeActivity extends AppCompatActivity {
                 });
 
 
+
         tv.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                messageChannel.send("这是Android给你发送的消息");
+                //messageChannel.send("这是Android给你发送的消息");
 
                 messageChannel.send("这是Android给你发送的消息",new BasicMessageChannel.Reply(){
 
