@@ -39,4 +39,11 @@
         android:text="flutter绘图"
         />
 
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/b_chart2"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:text="flutter绘图  fragment"
+        />
 </LinearLayout>

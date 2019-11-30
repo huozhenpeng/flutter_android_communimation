@@ -21,6 +21,7 @@
         <activity android:name=".ThreeActivity"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".CanvasActivity"/>
+        <activity android:name=".CanvasActivity2"/>
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>

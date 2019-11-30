@@ -14,6 +14,7 @@ public class SplanshActivity extends AppCompatActivity {
     Button b_eventchannel;
     Button b_basic;
     Button b_chart;
+    Button b_chart2;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,7 @@ public class SplanshActivity extends AppCompatActivity {
         b_eventchannel=findViewById(R.id.b_eventchannel);
         b_basic=findViewById(R.id.b_basic);
         b_chart=findViewById(R.id.b_chart);
+        b_chart2=findViewById(R.id.b_chart2);
 
         b_methodchannel.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -56,6 +58,15 @@ public class SplanshActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent();
                 intent.setClass(SplanshActivity.this,CanvasActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        b_chart2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent();
+                intent.setClass(SplanshActivity.this,CanvasActivity2.class);
                 startActivity(intent);
             }
         });
