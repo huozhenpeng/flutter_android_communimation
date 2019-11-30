@@ -1,0 +1,16 @@
+include ':app'
+rootProject.name='My Application'
+//加入下面配置
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'flutter_module3/.android/include_flutter.groovy'
+))
+
+
+
+include ':flutter_module3'
+project(':flutter_module3').projectDir = new File('../flutter_module3')
+
+include ':flutter_module3'
+project(':flutter_module3').projectDir = new File('../flutter_module3')
